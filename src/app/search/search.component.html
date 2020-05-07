@@ -1,0 +1,41 @@
+
+
+<br/>
+
+<div 
+class="card text-white bg-primary mb-3"  id="navbarColor01"
+style="max-width: 60rem;margin: auto;"
+>
+
+  <div class="card-header" id="navbarColor01"><h1 class="title">Find Your Music Here!!!</h1></div>
+  <div style="text-align:center;" class="card-body">
+    <p class="need">Use PAANtify to find your favourite music now!</p>
+    <form class="form-inline my-2 my-lg-0," style="text-align: center;">
+      <div class="form-group" id="navbarColor01" style="text-align: center;"></div>
+    
+    &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  
+    <input 
+      class="form-control mr-sm-2"
+        [(ngModel)]="searchStr"
+        placeholder="Artist Name"
+        (keyup)="searchTerm$.next()"
+        [ngModelOptions]="{ standalone: true }"
+        
+      />
+
+     
+         <button class="btn btn-primary btn-lg" type="submit" (click)="searchMusic()" name="submit" value="submit" >
+         Search
+          </button> 
+ 
+    </form>
+    <div *ngFor="let item of resultItems">
+      <app-result-box
+        [musicData]="item"
+        (viewMusicDetails)="listenForDetails($event)"
+      ></app-result-box>
+    </div>
+  </div>
+  
+</div>

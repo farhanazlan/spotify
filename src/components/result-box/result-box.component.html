@@ -1,0 +1,11 @@
+<div>
+  <br>
+  <button type="button" class="btn btn-primary btn-lg btn-block">
+    <h5 (click)="viewDetails(musicData)" style="cursor:pointer;">
+      {{ musicData.name }}
+    </h5>
+  
+    <p><strong>Genres:</strong> &nbsp;  {{ getGenreList(musicData.genres) }}</p> 
+  </button>
+  </div>
+  
